@@ -19,30 +19,16 @@ class Control:
         self.tv.estado = False
     
     def canalUp(self):
-        if self.tv.estado == True:
-            if self.tv.canal < 120:
-                self.tv.canal = self.tv.canal + 1
+        self.tv.canalUp()
         
     def canalDown(self):
-        if self.tv.estado == True:
-            if self.tv.canal > 1:
-                self.tv.canal = self.tv.canal - 1
+        self.tv.canalDown()
                 
     def volumenUp(self):
-        if self.tv.estado == True:
-            if self.tv.volumen < 7:
-                self.tv.volumen = self.tv.volumen + 1
+        self.tv.volumenUp()
     
     def volumenDown(self):
-        if self.tv.estado == True:
-            if self.tv.volumen > 1:
-                self.tv.volumen = self.tv.volumen - 1
+        self.tv.volumenDown()
                 
     def setCanal(self, canal):
-        if isinstance(canal, int):
-            if self.tv.estado == True:
-                if (canal<120) & (canal>1): 
-                    self.tv.canal = canal
-                    
-        else:
-            raise TypeError("Expected int")
+        self.tv.setCanal(canal)
